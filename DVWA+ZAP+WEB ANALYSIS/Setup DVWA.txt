@@ -1,0 +1,28 @@
+DVWA can be helpfull for red team and also for blue team, after you compromise the application, try see the logs in the siem or log analyser you prefer
+
+the following steps is just the most objective way possible for simplefy the process, if don`t work for you, try see the repository or use the automated instalation also in the repository
+
+- cd /var/www/html
+- git clone https://github.com/digininja/DVWA 
+
+- chmod 777 DVWA 
+
+- mysql -u root
+
+	- create database dvwa;
+	- create user 'dvwa'@'127.0.0.1' identified by 'p@ssw0rd'
+	- grant all privileges on dvwa.* to 'dvwa'@'127.0.0.1' identified by 'p@ssw0rd'; 
+	- exit
+	
+- service apache2 stop
+- service apache2 start
+
+try in browser: localhost/DVWA
+
+login: admin
+password: password
+
+Check the 'Setup Check' and satisfy the requirements
+
+press the button 'Create / Reset Database' in the first time accessed the dvwa
+
