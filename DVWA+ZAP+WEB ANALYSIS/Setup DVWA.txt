@@ -10,10 +10,16 @@ the following steps is just the most objective way possible for simplefy the pro
 - mysql -u root
 
 	- create database dvwa;
-	- create user 'dvwa'@'127.0.0.1' identified by 'p@ssw0rd'
+	- create user 'dvwa'@'127.0.0.1' identified by 'p@ssw0rd';
 	- grant all privileges on dvwa.* to 'dvwa'@'127.0.0.1' identified by 'p@ssw0rd'; 
 	- exit
-	
+
+- nano /var/lib/www/html/DVWA/config
+	*changes*: 
+	$_DVWA[ 'db_database' ] = 'dvwa';
+	$_DVWA[ 'db_user' ] = 'dvwa';
+	$_DVWA[ 'db_password' ] = 'p@ssw0rd';
+
 - service apache2 stop
 - service apache2 start
 
